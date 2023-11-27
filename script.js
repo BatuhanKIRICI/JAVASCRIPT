@@ -1,4 +1,4 @@
-let nums = ["Mike", "Aaron", "Gabriel", "Jose"];
+let nums = ["Mike", "Aaron", "Gabriel", "Jose", "Cassie"];
 
 const x = (a, i) => console.log(`${i} - ${a}`);
 
