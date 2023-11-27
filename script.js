@@ -1,5 +1,11 @@
-let nums = ["Mike", "Aaron", "Gabriel", "Jose", "Cassie"];
+let names = ["Mike", "Aaron", "Gabriel", "Jose", "Cassie"];
 
-const x = (a, i) => console.log(`${i} - ${a}`);
+const list = document.querySelector(".main");
 
-nums.forEach(x);
+let html = ``;
+
+names.forEach((name) => {
+  html += `<li>${name}</li>`;
+});
+
+list.innerHTML = html;
