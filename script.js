@@ -1,11 +1,13 @@
-let names = ["Mike", "Aaron", "Gabriel", "Jose", "Cassie"];
+const obj = {
+  a: 2,
+  b: 6,
+  c: ["alien", "velvet", "memory"],
+  5: true,
+  printNames() {
+    this.c.forEach((name) => {
+      console.log(name);
+    });
+  },
+};
 
-const list = document.querySelector(".main");
-
-let html = ``;
-
-names.forEach((name) => {
-  html += `<li>${name}</li>`;
-});
-
-list.innerHTML = html;
+obj.printNames();
