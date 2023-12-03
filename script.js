@@ -1,6 +1,8 @@
-const correctAnswers = ["E", "E", "E", "E"];
+const correctAnswers = ["8", "10", "3", "25"];
 const form = document.querySelector(".question-form");
 const result = document.querySelector(".result");
+const successMessage = document.querySelector("#successMessage");
+const button = document.querySelector(".btn");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -18,14 +20,11 @@ form.addEventListener("submit", (e) => {
       score += 25;
     }
   });
+
+  if (score == 100) {
+    successMessage.classList.remove("d-none");
+    button.setAttribute("disabled", "");
+  }
   result.classList.remove("d-none");
-  let point = 0;
-  const stamp = setInterval(() => {
-    result.querySelector("span").textContent = `${point}%`;
-    if (point === score) {
-      clearInterval(stamp);
-    } else {
-      point++;
-    }
-  }, 7);
+  result.querySelector("span").textContent = `${score}%`;
 });
