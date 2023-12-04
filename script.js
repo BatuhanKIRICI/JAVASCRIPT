@@ -1,8 +1,13 @@
 const points = [70, 75, 25, 63, 15, 5, 99, 12];
 
-const resultMap = points.map((point) => (point < 50 ? point + 10 : point));
+const resultReduce = points.reduce((value, point) => {
+  if (point < 50) {
+    value++;
+  }
+  return value;
+}, 0);
 
-// console.log(resultMap);
+// console.log(resultReduce);
 
 const students = [
   {
@@ -21,12 +26,29 @@ const students = [
     name: "kyle",
     score: 45,
   },
+  {
+    name: "jack",
+    score: 75,
+  },
+  {
+    name: "mary",
+    score: 80,
+  },
+  {
+    name: "angela",
+    score: 65,
+  },
+  {
+    name: "kyle",
+    score: 85,
+  },
 ];
 
-const studentMap = students.map((item) =>
-  item.score < 50
-    ? { name: item.name, score: item.score + 10 }
-    : { name: item.name, score: item.score }
-);
+const studentReduce = students.reduce((value, student) => {
+  if (student.name === "jack") {
+    value += student.score / 2;
+  }
+  return value;
+}, 0);
 
-console.log(studentMap);
+console.log(studentReduce);
