@@ -1,8 +1,11 @@
 const points = [70, 75, 25, 63, 15, 5, 99, 12];
+// const names = ["jack", "jane", "aaron", "zack"];
 
-const resultFind = points.find((point) => point > 50);
+// const resultFind = names.reverse();
 
-// console.log(resultFind);
+const resultPoint = points.sort((a, b) => b - a);
+
+console.log(resultPoint);
 
 const students = [
   {
@@ -23,7 +26,16 @@ const students = [
   },
 ];
 
-const studentIndex = students.findIndex((item) => item.name === "kyle");
-students[studentIndex].name = "bill";
+const result_1 = students.sort((a, b) => {
+  if (a.score > b.score) {
+    return -1;
+  } else if (b.score > a.score) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
 
-console.log(students);
+const result_2 = students.sort((a, b) => b.score - a.score);
+
+console.log(result_2);
