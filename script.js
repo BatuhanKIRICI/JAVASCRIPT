@@ -1,28 +1,32 @@
 const points = [70, 75, 25, 63, 15, 5, 99, 12];
 
-const resultFilter = points.filter((point) => point >= 50);
+const resultMap = points.map((point) => (point < 50 ? point + 10 : point));
 
-// console.log(resultFilter);
+// console.log(resultMap);
 
 const students = [
   {
     name: "jack",
-    passed: true,
+    score: 40,
   },
   {
     name: "mary",
-    passed: false,
+    score: 60,
   },
   {
     name: "angela",
-    passed: false,
+    score: 35,
   },
   {
     name: "kyle",
-    passed: true,
+    score: 45,
   },
 ];
 
-const studentFilter = students.filter((item) => !item.passed);
+const studentMap = students.map((item) =>
+  item.score < 50
+    ? { name: item.name, score: item.score + 10 }
+    : { name: item.name, score: item.score }
+);
 
-console.log(studentFilter);
+console.log(studentMap);
