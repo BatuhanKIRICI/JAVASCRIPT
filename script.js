@@ -1,12 +1,7 @@
-function abbrevName(name) {
-  let getArray = name.split("");
+function numberToString(num) {
+  // Return a string of the number here!
 
-  let index = getArray.indexOf(" ");
-
-  let first = getArray[0];
-  let second = getArray[index + 1];
-
-  return `${first.toUpperCase()}.${second.toUpperCase()}`;
+  return num.toString();
 }
 
-console.log(abbrevName("ichael aine"));
+console.log(numberToString(5));
