@@ -1,12 +1,12 @@
-function getMiddle(s) {
-  //Code goes here!
-  let long = s.length;
-  let middle = Math.floor(long / 2);
-  if (long % 2 === 1) {
-    return s[middle];
-  } else if (long % 2 === 0) {
-    return s[middle - 1] + s[middle];
-  }
+function abbrevName(name) {
+  let getArray = name.split("");
+
+  let index = getArray.indexOf(" ");
+
+  let first = getArray[0];
+  let second = getArray[index + 1];
+
+  return `${first.toUpperCase()}.${second.toUpperCase()}`;
 }
 
-console.log(getMiddle("janet"));
+console.log(abbrevName("ichael aine"));
