@@ -1,12 +1,12 @@
-function abbrevName(name) {
-  let getArray = name.split("");
+function positiveSum(arr) {
+  const group = arr.filter((a) => a > 0);
 
-  let index = getArray.indexOf(" ");
+  let sum = 0;
 
-  let first = getArray[0];
-  let second = getArray[index + 1];
-
-  return `${first.toUpperCase()}.${second.toUpperCase()}`;
+  group.map((num) => {
+    sum += num;
+  });
+  return sum;
 }
 
-console.log(abbrevName("ichael aine"));
+console.log(positiveSum([-2, 3, 5, 8, -7, -45, 9]));
