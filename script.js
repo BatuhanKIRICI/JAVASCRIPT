@@ -1,7 +1,12 @@
-function numberToString(num) {
-  // Return a string of the number here!
+function positiveSum(arr) {
+  const group = arr.filter((a) => a > 0);
 
-  return num.toString();
+  let sum = 0;
+
+  group.map((num) => {
+    sum += num;
+  });
+  return sum;
 }
 
-console.log(numberToString(5));
+console.log(positiveSum([-2, 3, 5, 8, -7, -45, 9]));
