@@ -1,12 +1,12 @@
-function positiveSum(arr) {
-  const group = arr.filter((a) => a > 0);
+function SeriesSum(n) {
+  let total = 0;
 
-  let sum = 0;
-
-  group.map((num) => {
-    sum += num;
-  });
-  return sum;
+  for (let i = 0; i <= n; i++) {
+    if (n === 0) {
+      return (total = 0);
+    }
+    total += 1 / (1 + i * 3);
+  }
+  return total.toFixed(2).toString();
 }
-
-console.log(positiveSum([-2, 3, 5, 8, -7, -45, 9]));
+console.log(SeriesSum(2));
