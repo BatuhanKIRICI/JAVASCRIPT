@@ -21,19 +21,16 @@ const getTodos = (resource) => {
 
 getTodos("/json/first.json")
   .then((data) => {
-    console.log(data);
+    console.log("Promise 1", data);
+    return getTodos("/json/second.json");
+  })
+  .then((data) => {
+    console.log("Promise 2", data);
+    return getTodos("/json/third.json");
+  })
+  .then((data) => {
+    console.log("Promise 3", data);
   })
   .catch((err) => {
     console.log(err);
   });
-
-const getPromise = () => {
-  return new Promise((resolve, reject) => {
-    // resolve("Successful!");
-    reject("Unsuccessful!");
-  });
-};
-
-/* getPromise()
-  .then((data) => console.log("Successful!", data))
-  .catch((err) => console.log("Unsuccessful!", err)); */
