@@ -1,9 +1,11 @@
-let val;
+// let dateOfNow = new Date()
 
-let a = 0;
-let b = 9;
+// console.log(dateOfNow)
+// console.log(typeof dateOfNow)
 
-val = a > b;
+let firstDate = new Date("5/31/1993")
+let secondDate = new Date("5/31/2024")
 
-console.log(typeof val)
-console.log(val);
+marginDate = (secondDate - firstDate) / 1000 / 60 / 60 / 24
+
+console.log(`${marginDate} days have passed till this day!`)
