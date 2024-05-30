@@ -1,15 +1,21 @@
-// let dateOfNow = new Date()
+// let firstName = "Michael"
 
-// console.log(dateOfNow)
-// console.log(typeof dateOfNow)
+// let secondName = "Schmidt"
 
-let firstDate = new Date("5/31/1993")
-let secondDate = new Date("5/31/2024")
-let dateNow = Date.now()
+// firstName = firstName.concat(" ", secondName)
 
-marginDate_1 = (dateNow - firstDate) / 1000 / 60 / 60 / 24
+// console.log(firstName)
 
-marginDate_2 = (secondDate - firstDate) / 1000 / 60 / 60 / 24
+// firstName = firstName.slice(5)
 
-console.log(`${marginDate_1} days have passed!`)
-console.log(`${marginDate_2} days will have passed till that day!`)
+// console.log(firstName)
+
+// firstName = firstName.replace("m", "n")
+
+// console.log(firstName)
+
+hobbies = "running,reading,development"
+
+hobbies = hobbies.split(",")
+
+console.log(hobbies)
