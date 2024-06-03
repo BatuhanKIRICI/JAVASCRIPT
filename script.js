@@ -1,21 +1,12 @@
-// let firstName = "Michael"
+const sentence = "   hello world. How ist goin? I ve been studying for programming for a long time. And i m  happy with that."
 
-// let secondName = "Schmidt"
+let newSentence1 = sentence.split(" ")
+let newSentence2 = sentence.trim()
 
-// firstName = firstName.concat(" ", secondName)
+console.log(newSentence1)
 
-// console.log(firstName)
-
-// firstName = firstName.slice(5)
-
-// console.log(firstName)
-
-// firstName = firstName.replace("m", "n")
-
-// console.log(firstName)
-
-hobbies = "running,reading,development"
-
-hobbies = hobbies.split(",")
-
-console.log(hobbies)
+console.log(newSentence2.split(" "))
+console.log(newSentence2.split(""))
+console.log(newSentence2.split("."))
+console.log(sentence.replace(/ /g, "-"))
+console.log(sentence.indexOf("for"))
