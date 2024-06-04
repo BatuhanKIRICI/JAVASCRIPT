@@ -1,12 +1,30 @@
-const sentence = "   hello world. How ist goin? I ve been studying for programming for a long time. And i m  happy with that."
+let arr = ["BMW", "VW", "Mercedes", "Audi"]
 
-let newSentence1 = sentence.split(" ")
-let newSentence2 = sentence.trim()
+arr[arr.length] = "Opel"
 
-console.log(newSentence1)
+console.log(arr)
 
-console.log(newSentence2.split(" "))
-console.log(newSentence2.split(""))
-console.log(newSentence2.split("."))
-console.log(sentence.replace(/ /g, "-"))
-console.log(sentence.indexOf("for"))
+// arr[0] = "Bugatti"
+
+// console.log(arr)
+
+arr.push("Bugatti")
+arr.unshift("Ferrari")
+
+console.log(arr)
+
+arr.reverse()
+
+console.log(arr)
+
+arr.sort()
+
+console.log(arr)
+
+let str = "Ford,Seat"
+
+let arr2 = str.split(",")
+
+arr = arr.concat(arr2)
+
+console.log(arr)
