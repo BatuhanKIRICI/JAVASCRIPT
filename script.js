@@ -1,30 +1,20 @@
-let round = Number(prompt("Round number?"))
-let option = round
+/* const sum = (a, b) => {
 
-let guess
-let counter = 0
+    if (typeof a === "undefined") a = 0
+    if (typeof b === "undefined") b = 0
 
-let num = Math.floor(Math.random() * 10 + 1)
+    let c = a + b
+    return c
+} */
 
 
-while (round > 0) {
+//ES& Default Parameters
+const sum = (a = 0, b = 0) => {
 
-    round--
-    counter++
 
-    guess = Number(prompt("Choose a number: "))
-
-    if (guess === num) {
-        console.log(`Yes! You've done it in ${counter}th round! Your score is ${100 - (counter - 1) * (100 / option)}!`)
-        break
-    } else if (guess > num) {
-        console.log("Down")
-    } else {
-        console.log("Up")
-    }
-
-    if (round === 0) {
-        console.log(`Game over! Number is: ${num}`)
-        break
-    }
+    let c = a + b
+    return c
 }
+
+console.log(sum(4))
+
