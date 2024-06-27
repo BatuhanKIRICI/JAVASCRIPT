@@ -1,22 +1,16 @@
-let val
 
-let a = 10
+let a
 
+function name_1() {
+    a = "bmw"
+    return a
+}
 
+console.log(name_1())
 
-val = window
+function name_2() {
+    let b = "mercedes"
+    return b
+}
 
-// val = window.scrollX
-// val = window.scrollY
-
-// val = window.location
-// val = window.location.href
-// val = window.location.host
-// val = window.location.hostname
-// val = window.location.protocol
-// val = window.location.search
-
-// window.location.href = "http://batuhankirici.com"
-
-
-console.log(val)
+console.log(b)
