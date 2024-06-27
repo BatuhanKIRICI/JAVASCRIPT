@@ -1,20 +1,22 @@
-/* const sum = (a, b) => {
+let val
 
-    if (typeof a === "undefined") a = 0
-    if (typeof b === "undefined") b = 0
-
-    let c = a + b
-    return c
-} */
+let a = 10
 
 
-//ES& Default Parameters
-const sum = (a = 0, b = 0) => {
+
+val = window
+
+// val = window.scrollX
+// val = window.scrollY
+
+// val = window.location
+// val = window.location.href
+// val = window.location.host
+// val = window.location.hostname
+// val = window.location.protocol
+// val = window.location.search
+
+// window.location.href = "http://batuhankirici.com"
 
 
-    let c = a + b
-    return c
-}
-
-console.log(sum(4))
-
+console.log(val)
