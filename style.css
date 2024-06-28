@@ -1,19 +1,30 @@
-* {
-  background-color: rgb(22, 21, 71);
+body {
+  background-color: #e0e0e2;
 }
 
 h1 {
-  color: rgb(233, 125, 215);
+  color: #721817;
 }
 
-p {
-  color: rgb(9, 216, 61);
+h2 {
+  color: #721817;
 }
 
-#header1 {
-  color: bisque;
+.center-text {
+  align-items: center;
 }
 
-#header1:hover {
-  color: rgb(10, 182, 224);
+#logo {
+  margin: auto;
+  display: block;
+}
+
+h2 > span {
+  color: #fa9f42;
+  font-size: 0.75em;
+}
+
+#copyright {
+  padding-top: 12px;
+  font-size: 075em;
 }
