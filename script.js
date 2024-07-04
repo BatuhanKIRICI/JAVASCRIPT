@@ -1,23 +1,33 @@
-function letterFinder(word, match) {
+function consoleStyler(color, background, fontSize, txt) {
+    var message = "%c" + txt;
+    var style = `color: ${color};`
+    style += `background: ${background};`
+    style += `font-size: ${fontSize};`
+    console.log(message, style);
+}
 
-    let condition1 = typeof (word) == 'string' && word.length >= 2
+consoleStyler('#1d5c63', '#ede6db', '40px', 'Congrats!');
 
-    let condition2 = typeof (match) == 'string' && match.length === 1
-
-    if (condition1 === true && condition2 === true) {
-        for (var i = 0; i < word.length; i++) {
-            if (word[i] == match) {
-                console.log('Found the', match, 'at', i + 1)
-            } else {
-                console.log('---No match found at', i + 1)
-            }
-        }
+function celebrateStyler(reason) {
+    var fontStyle = "color: tomato; font-size: 50px"
+    if (reason == "birthday") {
+        console.log(`%cHappy birthday`, fontStyle);
+    } else if (reason == "champions") {
+        console.log(`%cCongrats on the title!`, fontStyle);
     } else {
-        console.log("Please pass correct arguments to the function.")
+        console.log(fontStyle);
     }
 }
 
-letterFinder(45, 4)
+celebrateStyler('birthday');
 
-letterFinder("cat", "c")
+consoleStyler('#1d5c63', '#ede6db', '40px', 'Congrats!')
+celebrateStyler("birthday")
+
+function styleAndCelebrate(color, background, fontSize, txt, reason) {
+    consoleStyler(color, background, fontSize, txt);
+    celebrateStyler(reason);
+}
+
+styleAndCelebrate('ef7c8e', 'fae8e0', '30px', 'You made it!', 'champions')
 
