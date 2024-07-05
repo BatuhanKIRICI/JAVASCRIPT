@@ -1,32 +1,29 @@
-let dairy = ['cheese', 'sour cream', 'milk', 'yogurt', 'ice cream', 'milkshake'];
-
-function logDairy() {
-    for (const product of dairy) {
-        console.log(product);
-    }
+const fruits = ['kiwi', 'mango', 'apple', 'pear'];
+function appendIndex(fruit, index) {
+    console.log(`${index}. ${fruit}`)
 }
+fruits.forEach(appendIndex);
 
-const animal = {
-    canJump: true
-};
+console.log("*****************************************")
 
-const bird = Object.create(animal);
-bird.canFly = true;
-bird.hasFeathers = true;
+const veggies = ['onion', 'garlic', 'potato'];
+veggies.forEach(function (veggie, index) {
+    console.log(`${index}. ${veggie}`);
+});
 
-function birdCan() {
-    for (const key of Object.keys(bird)) {
-        console.log(`${key}: ${bird[key]}`);
-    }
-}
+console.log("*****************************************")
 
-function animalCan() {
-    for (const key in bird) {
-        console.log(`${key}: ${bird[key]}`);
-    }
-}
+const nums = [0, 10, 20, 30, 40, 50];
+const filteredNums = nums.filter(function (num) {
+    return num > 20;
+})
 
+console.log(filteredNums)
 
-logDairy();
-birdCan();
-animalCan();
+console.log("*****************************************")
+
+const mappedNums = [0, 10, 20, 30, 40, 50].map(function (num) {
+    return num / 10
+})
+
+console.log(mappedNums)
