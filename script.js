@@ -1,28 +1,46 @@
-function Person(name, yearOfBirth, job) {
+function Employee(name, salary) {
+
+    if (!(this instanceof Employee)) {
+        return new Employee(name, salary)
+    }
+
     this.name = name
-    this.yearOfBirth = yearOfBirth
-    this.job = job
-
+    this.salary = salary
 }
 
-Person.prototype.calculateAge = function () {
-    return 2024 - this.yearOfBirth
+Employee.prototype.calculateTax = function () {
+    let month = new Date().getMonth() + 1
+    let total = this.salary * month
+    let tax = 0
+    let paid = 0
+
+
+    if (total < 20000) {
+
+        tax = total * 0.2
+
+    } else if (total > 20000 && total < 30000) {
+
+        tax = total * 0.25
+
+    } else {
+
+        tax = total * 0.25
+    }
+    return {
+        tax: tax,
+        paid: total - tax
+    }
 }
 
-Person.prototype.getJob = function () {
-    return this.job = this.job
-}
+let emp1 = new Employee("Friedrich", 2000)
 
-let man = new Person("Karl", 1990, "engineer")
-let woman = new Person("Maria", 1999, "teacher")
+console.log(emp1)
+console.log(emp1.calculateTax())
 
-console.log(man)
-console.log(man.calculateAge())
-console.log(man.getJob())
-console.log("****************************")
-console.log(woman)
-console.log(woman.calculateAge())
-console.log(woman.getJob())
-console.log("****************************")
-console.log(woman.hasOwnProperty("job"))
-console.log(woman.hasOwnProperty("surname"))
+console.log("***************************************************")
+
+let emp2 = Employee("Mark", 4000)
+
+console.log(emp2)
+console.log(emp2.calculateTax())
