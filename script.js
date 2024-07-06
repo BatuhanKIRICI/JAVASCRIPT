@@ -1,29 +1,13 @@
-const fruits = ['kiwi', 'mango', 'apple', 'pear'];
-function appendIndex(fruit, index) {
-    console.log(`${index}. ${fruit}`)
-}
-fruits.forEach(appendIndex);
+var h1 = document.createElement('h1')
+h1.innerText = "Type into the input to make this text change"
 
-console.log("*****************************************")
+var input = document.createElement('input')
+input.setAttribute('type', 'text')
 
-const veggies = ['onion', 'garlic', 'potato'];
-veggies.forEach(function (veggie, index) {
-    console.log(`${index}. ${veggie}`);
-});
+document.body.innerText = '';
+document.body.appendChild(h1);
+document.body.appendChild(input);
 
-console.log("*****************************************")
-
-const nums = [0, 10, 20, 30, 40, 50];
-const filteredNums = nums.filter(function (num) {
-    return num > 20;
+input.addEventListener('change', function () {
+    h1.innerText = input.value
 })
-
-console.log(filteredNums)
-
-console.log("*****************************************")
-
-const mappedNums = [0, 10, 20, 30, 40, 50].map(function (num) {
-    return num / 10
-})
-
-console.log(mappedNums)
