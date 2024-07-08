@@ -1,22 +1,22 @@
-let personProto = {
-  calculateAge: function () {
-    return 2024 - this.year;
-  },
+let Person = function (name, yearOfBirth, job) {
+  this.name = name;
+  this.yearOfBirth = yearOfBirth;
+  this.job = job;
 };
 
-let mark = Object.create(personProto);
+Person.prototype.calculateAge = function () {
+  return 2024 - this.yearOfBirth;
+};
 
-mark.name = "Mark";
-mark.surname = "Schmidt";
-mark.year = 2000;
+let Teacher = function (name, yearOfBirth, job, subject) {
+  Person.call(this, name, yearOfBirth, job);
+  this.subject = subject;
+};
 
-console.log(mark);
-console.log(mark.calculateAge());
+Teacher.prototype = Object.create(Person.prototype);
 
-let anna = Object.create(personProto, {
-  name: { value: "Anna" },
-  surname: { value: "Schmidt" },
-  year: { value: 2003 },
-});
+Teacher.prototype.constructor = Teacher;
 
-console.log(anna);
+let claire = new Teacher("Claire", 1999, "Teacher", "Mathematics");
+
+console.log(claire.calculateAge());
