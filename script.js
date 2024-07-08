@@ -1,66 +1,22 @@
+let personProto = {
+  calculateAge: function () {
+    return 2024 - this.year;
+  },
+};
 
-// Given variables
-const dishData = [
-    {
-        name: "Italian pasta",
-        price: 9.55
-    },
-    {
-        name: "Rice with veggies",
-        price: 8.65
-    },
-    {
-        name: "Chicken with potatoes",
-        price: 15.55
-    },
-    {
-        name: "Vegetarian Pizza",
-        price: 6.45
-    },
-]
-const tax = 1.20;
+let mark = Object.create(personProto);
 
-// Implement getPrices()
-function getPrices(taxBoolean) {
-    for (let i = 0; i < dishData.length; i++) {
-        let finalPrice = "";
-        let name = dishData[i].name;
-        let price = dishData[i].price;
+mark.name = "Mark";
+mark.surname = "Schmidt";
+mark.year = 2000;
 
-        if (taxBoolean === true) {
-            finalPrice = price * tax;
-        } else if (taxBoolean === false) {
-            finalPrice = price;
-        } else {
-            console.log("You need to pass a boolean to the getPrices call!");
-            return;
-        }
-        console.log(`Dish: ${name} Price: $${finalPrice}`);
-    }
-}
+console.log(mark);
+console.log(mark.calculateAge());
 
-// Implement getDiscount()
-function getDiscount(taxBoolean, guests) {
-    getPrices(taxBoolean);
+let anna = Object.create(personProto, {
+  name: { value: "Anna" },
+  surname: { value: "Schmidt" },
+  year: { value: 2003 },
+});
 
-    try {
-        if (typeof guests === "number" && guests > 0 && guests < 30) {
-            let discount = 0;
-
-            if (guests < 5) {
-                discount = 5;
-            } else if (guests >= 5) {
-                discount = 10;
-            }
-            console.log("Discount is: $" + discount);
-        } else {
-            console.log("The second argument must be a number between 0 and 30");
-        }
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-// Call getDiscount()
-getDiscount(true, 2);
-getDiscount(false, 10);
+console.log(anna);
