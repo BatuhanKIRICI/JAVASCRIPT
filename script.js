@@ -1,22 +1,26 @@
-let Person = function (name, yearOfBirth, job) {
+let Person = function (name) {
   this.name = name;
-  this.yearOfBirth = yearOfBirth;
-  this.job = job;
 };
 
-Person.prototype.calculateAge = function () {
-  return 2024 - this.yearOfBirth;
+Person.prototype.Introduce = function () {
+  console.log(this.name);
 };
 
-let Teacher = function (name, yearOfBirth, job, subject) {
-  Person.call(this, name, yearOfBirth, job);
-  this.subject = subject;
+let Teacher = function (name, branch) {
+  Person.call(this, name);
+  this.branch = branch;
 };
 
 Teacher.prototype = Object.create(Person.prototype);
-
 Teacher.prototype.constructor = Teacher;
+Teacher.prototype.teach = function () {
+  console.log(`I teach ${this.branch}. `);
+};
 
-let claire = new Teacher("Claire", 1999, "Teacher", "Mathematics");
+let p1 = new Person("Mike");
 
-console.log(claire.calculateAge());
+let p2 = new Teacher("Mark", "Literature");
+
+p1.Introduce();
+p2.Introduce();
+p2.teach();
