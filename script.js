@@ -1,25 +1,34 @@
-// try {
-//   console.log(myFunction());
-// } catch (e) {
-//   console.log(e);
-//   console.log(e.message);
-//   console.log(e.name);
-//   console.log(e instanceof ReferenceError);
-//   console.log(e instanceof TypeError);
-//   console.log(typeof e);
-// }
+document.getElementById("submit").addEventListener("click", function (e) {
+  e.preventDefault();
 
-let info = {
-  name: "Bill Smith",
-};
+  let name = document.getElementById("name");
+  let age = document.getElementById("age");
+  let errors = document.getElementById("errors");
+  errors.innerHTML = "";
 
-try {
-  console.log(info.name);
-  if (!info.numberOfTel) {
-    throw new Error("User has no contact info!");
+  try {
+    if (name.value.length === 0) {
+      throw new Error("No name input!");
+    }
+    if (name.value.length > 20) {
+      throw new Error("Name is too long!");
+    }
+
+    if (age.value.length === 0) {
+      throw new Error("No age input!");
+    }
+
+    if (isNaN(age.value)) {
+      throw new Error("Age is not numeric!");
+    }
+
+    console.log("Form is submitted.");
+  } catch (err) {
+    errors.innerHTML = err;
+  } finally {
+    name.value = "";
+    age.value = "";
   }
-} catch (e) {
-  console.log(e);
-} finally {
-  console.log("Finally block!");
-}
+
+  e.preventDefault();
+});
