@@ -1,34 +1,26 @@
-document.getElementById("submit").addEventListener("click", function (e) {
-  e.preventDefault();
+const multiply = (x, y) => x * y;
 
-  let name = document.getElementById("name");
-  let age = document.getElementById("age");
-  let errors = document.getElementById("errors");
-  errors.innerHTML = "";
+console.log(multiply(4, 5));
 
-  try {
-    if (name.value.length === 0) {
-      throw new Error("No name input!");
-    }
-    if (name.value.length > 20) {
-      throw new Error("Name is too long!");
-    }
+console.log("*************************************");
 
-    if (age.value.length === 0) {
-      throw new Error("No age input!");
-    }
+const splittinFunc = (text) => text.split(" ");
 
-    if (isNaN(age.value)) {
-      throw new Error("Age is not numeric!");
-    }
+console.log(splittinFunc("Hello World again and again and..."));
 
-    console.log("Form is submitted.");
-  } catch (err) {
-    errors.innerHTML = err;
-  } finally {
-    name.value = "";
-    age.value = "";
-  }
+console.log("*************************************");
 
-  e.preventDefault();
+const objMaker = (name, id) => ({
+  name,
+  id,
 });
+
+console.log(objMaker("Luke", 45566));
+
+console.log("*************************************");
+
+const arr = [1, 651, 2, 546, 489, 7813, 456, 75, 46, 36, 99, 56151, 77, 88];
+
+const arr_filter = arr.filter((x) => x % 2 === 0);
+
+console.log(arr_filter);
