@@ -1,27 +1,25 @@
-let numeric = {
-  min: 0,
-  max: 100,
-  checkNumericRange: function (value) {
-    if (typeof value !== "number") {
-      return false;
-    } else {
-      return value >= this.min && value <= this.max;
-    }
-  },
+// try {
+//   console.log(myFunction());
+// } catch (e) {
+//   console.log(e);
+//   console.log(e.message);
+//   console.log(e.name);
+//   console.log(e instanceof ReferenceError);
+//   console.log(e instanceof TypeError);
+//   console.log(typeof e);
+// }
+
+let info = {
+  name: "Bill Smith",
 };
 
-// console.log(numeric.checkNumericRange(-20));
-// console.log(numeric.checkNumericRange(20));
-
-let num1 = { min: 10, max: 58 };
-
-console.log(numeric.checkNumericRange.call(num1, 43));
-console.log(numeric.checkNumericRange.call(num1, 77));
-console.log("**************************************************");
-console.log(numeric.checkNumericRange.apply(num1, [12]));
-console.log(numeric.checkNumericRange.apply(num1, [95]));
-console.log("**************************************************");
-
-let checkNumber = numeric.checkNumericRange.bind(num1);
-
-console.log(checkNumber(56));
+try {
+  console.log(info.name);
+  if (!info.numberOfTel) {
+    throw new Error("User has no contact info!");
+  }
+} catch (e) {
+  console.log(e);
+} finally {
+  console.log("Finally block!");
+}
